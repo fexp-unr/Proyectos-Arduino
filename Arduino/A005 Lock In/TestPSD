@@ -1,0 +1,5 @@
+To test the PSD with a phase-shifting circuit follow PhaseShift.pdf in the PSD-Talk folder.
+
+The input of the ciruit is attached to the Arduino port supplying the reference signal, the output goes to the Arduino input grabbing the signal. The resistors in the inverting branch should be roughly equal to provide 1V/V gain. I used 10k resistors.
+
+The pot in the non-inverting branch was 10k and the capacitor was chosen to create a 90 degree phase shift at the reference frequency, which occurs at 1/(2piR*C). The reference frequency is determined by the Arduino code by fr=(TCNT2 rate)/(OCR2A * wavetable length)

@@ -1,0 +1,14 @@
+Video de prueba: https://www.youtube.com/watch?v=vIjzJDHF07k
+Código del video: Https://Sameeruno01.Wixsite.Com/Website-1
+Otro código, con alguna información sobre cómo manejar los triggers: https://androminarobot-english.blogspot.com/2017/03/encoder-and-arduinotutorial-about-ir.html
+Funcionamiento de los interrupt: https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/
+Otro enlace sobre lo mismo: https://gammon.com.au/interrupts
+
+Los interrupt son formas de aumentar el tiempo de respuesta del arduino
+
+Manejo del timer interno del arduino
+https://www.aranacorp.com/es/uso-de-los-temporizadores-de-arduino/
+https://docs.arduino.cc/tutorials/generic/secrets-of-arduino-pwm/
+https://www.teachmemicro.com/arduino-interrupt-tutorial/
+https://www.teachmemicro.com/arduino-timer-interrupt-tutorial/
+https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf
