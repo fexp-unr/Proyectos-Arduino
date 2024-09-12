@@ -12,7 +12,7 @@ import pandas as pd # manejo de los datos. no es fundamental pero puede servir d
 
 SERIAL_PORT = '/dev/ttyACM0'
 BAUD_RATE = 9600
-OUTPUT_FILE = '/home/benattie/Programs/Arduino/python_scripts/A003_distancia_ultrasonido/data.csv'
+OUTPUT_FILE = '/home/benattie/Documents/FCEIA/Arduino/A002 Medición de Distancias con Ultrasonido/A003_python/data.csv'
 
 
 class serialPlot:
@@ -52,6 +52,7 @@ class serialPlot:
         self.previousTimer = currentTimer
         timeText.set_text('Plot Interval = ' + str(self.plotTimer) + 'ms')
         value,  = struct.unpack('f', self.rawData)    # use 'h' for a 2 byte integer
+        print(value)
         self.data.append(value)    # we get the latest data point and append it to our array
         lines.set_data(range(self.plotMaxLength), self.data)
         lineValueText.set_text('[' + lineLabel + '] = ' + str(value))
@@ -63,7 +64,7 @@ class serialPlot:
         while (self.isRun):
             self.serialConnection.readinto(self.rawData)
             self.isReceiving = True
-            #print(self.rawData)
+            print(self.rawData)
 
     def close(self):
         self.isRun = False
@@ -99,7 +100,7 @@ def main():
     timeText = ax.text(0.50, 0.95, '', transform=ax.transAxes)
     lines = ax.plot([], [], label=lineLabel)[0]
     lineValueText = ax.text(0.50, 0.90, '', transform=ax.transAxes)
-    anim = animation.FuncAnimation(fig, s.getSerialData, fargs=(lines, lineValueText, lineLabel, timeText), interval=pltInterval)    # fargs has to be a tuple
+    anim = animation.FuncAnimation(fig, s.getSerialData, fargs=(lines, lineValueText, lineLabel, timeText), interval=pltInterval, cache_frame_data=False)    # fargs has to be a tuple
 
     plt.legend(loc="upper left")
     plt.show()
